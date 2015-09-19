@@ -1,6 +1,4 @@
-package com.first.progs;
-
-import org.omg.CORBA_2_3.portable.OutputStream;
+package com.first.book_classes;
 
 public class Pies {
     String name;

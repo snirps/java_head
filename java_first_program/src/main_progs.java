@@ -1,8 +1,6 @@
-package com.first;
+import com.first.book_classes.Pies;
 
-import com.first.progs.Pies;
-
-public class program {
+public class main_progs {
 
     public static void main(String[] args) {
 
