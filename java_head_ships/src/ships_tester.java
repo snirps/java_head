@@ -3,7 +3,7 @@ import classes.ShipsPortal;
 public class ships_tester {
     public static void main(String[] args) {
 
-        System.out.print("Here is the tester");
+        System.out.print("Here is the teste\n");
 
         ShipsPortal wit = new ShipsPortal();
 
@@ -13,10 +13,10 @@ public class ships_tester {
         String chooseField = "2";
         String results = wit.check(chooseField);
 
-        String testResults = "failure";
+        String testResults = "test -> failure";
 
-        if (results.equals("hit")){
-            testResults="pass";
+        if (results.equals("hit")) {
+            testResults="test -> pass";
         }
 
         System.out.print(testResults);
