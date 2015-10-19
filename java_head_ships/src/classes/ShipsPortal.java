@@ -1,31 +1,37 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class ShipsPortal {
-    int[] localField;
-    int countHit;
+    private ArrayList<String> localField;
+    private String name;
 
-    public String check(String stringField) {
-        int shot = Integer.parseInt(stringField);
 
+    public void setLocalField(ArrayList<String> locFie) {
+        this.localField = locFie;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public String check(String move) {
         String result = "miss";
 
-        for (int field:localField){
-            if(shot==field){
+        int index=localField.indexOf(move);
+
+        if (index>=0){
+            localField.remove(index);
+            if (localField.isEmpty()){
+                result="sunk";
+            }else{
                 result="hit";
-                countHit++;
             }
         }
-
-        if (countHit==localField.length){
-            result="sunk";
-        }
-
-        System.out.print(result+"\n");
-
+        System.out.print(localField);
         return result;
     }
 
-    public void setLocalField(int[] localField) {
-        this.localField = localField;
-    }
+
+
 }
