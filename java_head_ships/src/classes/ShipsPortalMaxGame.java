@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShipsPortalMaxGame {
     private SupportedClass support = new SupportedClass();
-    private ArrayList<ShipsPortal> listOfPortals = new ArrayList<>();
+    private ArrayList<ShipsPortal> listOfPortals = new ArrayList<ShipsPortal>();
     private int amountMoves= 0;
 
     public void preparedGame(){
@@ -25,7 +25,7 @@ public class ShipsPortalMaxGame {
         System.out.print("Twoja Stara, Bananowy potwor, In Your face\n");
         System.out.print("Let's do it. Try to use as few moves as you can ");
 
-        //repeat for each element of array
+        //repeat for each element of array (locate ships on the net)
         for (ShipsPortal locatedPortal:listOfPortals){
             ArrayList<String> newLocation = support.locatesPortal(3);
             locatedPortal.setLocalField(newLocation);
@@ -35,7 +35,7 @@ public class ShipsPortalMaxGame {
     public void startGame(){
         //until array is not empty
         while (!listOfPortals.isEmpty()){
-            String userMove = support.downloadInputData("Give Field"); //take user move
+            String userMove = support.downloadInputData("Give Field\n"); //take user move
             checkUserMove(userMove); //call method: checkUserMove()
     }
         finishedGame();
@@ -56,10 +56,18 @@ public class ShipsPortalMaxGame {
             }
 
         }
-        System.out.print(result);
+        System.out.println(result);
     }
 
     public void finishedGame(){
+        System.out.println("All portals sunks");
+        if (amountMoves <= 18) {
+            System.out.println("You did only "+amountMoves+" moves.");
+            System.out.println("You win this game before max number of moves");
+        } else {
+            System.out.println("You were too slow. You did almost: "+amountMoves+" moves");
+            System.out.println("You're sucks!!!!");
+        }
 
     }
 

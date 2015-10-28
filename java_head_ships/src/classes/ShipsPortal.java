@@ -10,9 +10,7 @@ public class ShipsPortal {
     public void setLocalField(ArrayList<String> locFie) {
         this.localField = locFie;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) {this.name = name;}
 
 
     public String check(String move) {
@@ -28,7 +26,7 @@ public class ShipsPortal {
                 result="hit";
             }
         }
-        System.out.print(localField);
+        System.out.println(localField);
         return result;
     }
 
